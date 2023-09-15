@@ -3,4 +3,5 @@
     font-size: 60px; /* Adjust the font size as needed */
     font-family: "Lucida Console", "Courier New", monospace;
     color: #000000; /* Set your desired text color */
+    font-weight: bold; /* Make the text bold */
 }

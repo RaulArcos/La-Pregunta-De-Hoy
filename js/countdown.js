@@ -1,5 +1,3 @@
-import './animations.js';
-
 // Function to calculate time remaining until 5 AM
 function timeUntil5AM() {
     const now = new Date();

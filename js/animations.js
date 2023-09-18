@@ -11,8 +11,105 @@ function WordShuffler(holder,opt){
     this.currentWord = null;
     this.currentCharacter = 0;
     this.currentWordLength = 0;
+
+      const red_patern = [
+        '#FF0000', // Rojo brillante
+        '#FF6347', // Rojo coral
+        '#DC143C', // Rojo carmín
+        '#FF4500', // Rojo anaranjado
+        '#FF7F50', // Rojo salmón
+    ];
+    
+    const green_patern = [
+        '#008000', // Verde brillante
+        '#32CD32', // Verde lima
+        '#00FF00', // Verde limón
+        '#7FFF00', // Verde chartreuse
+        '#00FF7F', // Verde primavera
+    ];
+    
+    const yellow_patern = [
+        '#FFFF00', // Amarillo puro
+        '#FFFFE0', // Amarillo almendrado
+        '#FFFACD', // Amarillo lino
+        '#FFD700', // Amarillo oro
+        '#FFA500', // Amarillo naranja
+    ];
+    
+    const orange_patern = [
+        '#FF8C00', // Naranja oscuro
+        '#FFA07A', // Salmón pastel
+        '#FF4500', // Rojo anaranjado
+        '#FF6347', // Rojo coral
+        '#FFD700', // Amarillo oro
+    ];
+    
+    const purple_patern = [
+        '#9370DB', // Púrpura medio
+        '#9932CC', // Violeta profundo
+        '#8A2BE2', // Azul violeta
+        '#BA55D3', // Orquídea oscuro
+        '#DA70D6', // Lavanda
+    ];
+    
+    const pink_patern = [
+        '#FF69B4', // Rosa
+        '#FF1493', // Rosa profundo
+        '#FFC0CB', // Rosa pastel
+        '#FFB6C1', // Rosa claro pastel
+        '#FF6EB4', // Rosa brillante
+    ];
+    
+    const brown_patern = [
+        '#8B4513', // Marrón oscuro
+        '#A0522D', // Marrón sienna
+        '#D2691E', // Marrón chocolate
+        '#CD853F', // Marrón bronceado
+        '#DEB887', // Marrón burlywood
+    ];
+    
+    const gray_patern = [
+        '#808080', // Gris
+        '#A9A9A9', // Gris pastel
+        '#D3D3D3', // Gris claro pastel
+        '#696969', // Gris apagado
+        '#C0C0C0', // Gris plata
+    ];
+    
+    const blue_patern = [
+        '#87CEEB', // Azul claro
+        '#ADD8E6', // Azul cielo
+        '#B0E0E6', // Celeste
+        '#00BFFF', // Azul real
+        '#1E90FF', // Azul claro intenso
+        '#6495ED', // Azul acero
+        '#4682B4', // Azul apagado
+        '#5F9EA0', // Azul cadete
+        '#00CED1', // Azul oscuro intenso
+        '#20B2AA', // Azul claro medio
+        '#AFEEEE', // Turquesa pastel
+        '#87CEFA', // Azul pálido
+        '#00FFFF', // Cian
+        '#E0FFFF', // Azul claro muy pálido
+        '#F0FFFF', // Azul cielo pastel
+        '#B0C4DE', // Azul acero claro
+        '#00CED1', // Azul oscuro intenso
+        '#20B2AA', // Azul claro medio
+        '#AFEEEE', // Turquesa pastel
+        '#87CEFA', // Azul pálido
+        '#00FFFF', // Cian
+        '#E0FFFF', // Azul claro muy pálido
+        '#F0FFFF', // Azul cielo pastel
+        '#B0C4DE', // Azul acero claro
+        '#5F9EA0', // Azul cadete
+        '#4682B4', // Azul apagado
+        '#6495ED', // Azul acero
+        '#1E90FF', // Azul claro intenso
+        '#00BFFF', // Azul real
+    ];
   
-  
+    const posible_palettes = [blue_patern, red_patern, green_patern, yellow_patern, orange_patern, purple_patern, pink_patern, brown_patern, gray_patern];
+
     var options = {
       fps : 120,
       timeOffset : 5,
@@ -22,38 +119,7 @@ function WordShuffler(holder,opt){
       mixCapital : false,
       mixSpecialCharacters : false,
       needUpdate : true,
-    
-        colors: [
-            '#87CEEB', // Azul claro
-            '#ADD8E6', // Azul cielo
-            '#B0E0E6', // Celeste
-            '#00BFFF', // Azul real
-            '#1E90FF', // Azul claro intenso
-            '#6495ED', // Azul acero
-            '#4682B4', // Azul apagado
-            '#5F9EA0', // Azul cadete
-            '#00CED1', // Azul oscuro intenso
-            '#20B2AA', // Azul claro medio
-            '#AFEEEE', // Turquesa pastel
-            '#87CEFA', // Azul pálido
-            '#00FFFF', // Cian
-            '#E0FFFF', // Azul claro muy pálido
-            '#F0FFFF', // Azul cielo pastel
-            '#B0C4DE', // Azul acero claro
-            '#00CED1', // Azul oscuro intenso
-            '#20B2AA', // Azul claro medio
-            '#AFEEEE', // Turquesa pastel
-            '#87CEFA', // Azul pálido
-            '#00FFFF', // Cian
-            '#E0FFFF', // Azul claro muy pálido
-            '#F0FFFF', // Azul cielo pastel
-            '#B0C4DE', // Azul acero claro
-            '#5F9EA0', // Azul cadete
-            '#4682B4', // Azul apagado
-            '#6495ED', // Azul acero
-            '#1E90FF', // Azul claro intenso
-            '#00BFFF', // Azul real
-        ]
+      colors: posible_palettes[Math.floor(Math.random() * 9)]
     }
   
     if(typeof opt != "undefined"){
@@ -62,8 +128,6 @@ function WordShuffler(holder,opt){
       }
     }
   
-  
-    
     this.needUpdate = true;
     this.fps = options.fps;
     this.interval = 1000/this.fps;
@@ -74,7 +138,7 @@ function WordShuffler(holder,opt){
     this.mixSpecialCharacters = options.mixSpecialCharacters;
     this.colors = options.colors;
   
-     this.useCanvas = options.useCanvas;
+    this.useCanvas = options.useCanvas;
     
     this.chars = [
       'A','B','C','D',
@@ -152,9 +216,7 @@ function WordShuffler(holder,opt){
       
         this.now = Date.now();
         this.delta = this.now - this.then;
-  
-         
-  
+
         if (this.delta > this.interval) {
           this.currentTimeOffset++;
         
@@ -220,8 +282,6 @@ function WordShuffler(holder,opt){
     }
   
     this.writeWord(this.holder.innerHTML);
-  
-  
     console.log(this.currentWord);
     update(time);
   }
@@ -232,3 +292,6 @@ function WordShuffler(holder,opt){
     textColor : '#000',
     timeOffset : 2
   });
+
+  
+  

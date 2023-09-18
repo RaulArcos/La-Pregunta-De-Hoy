@@ -5,3 +5,19 @@
     color: #000000; /* Set your desired text color */
     font-weight: bold; /* Make the text bold */
 }
+
+.countdown-timer {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+  /* Add custom CSS to position the countdown at the bottom */
+  .bottom-fixed {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 10px;
+}

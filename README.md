@@ -1,15 +1,6 @@
-# la-pregunta-de-hoy
+# La Pregunta de Hoy
+Este repo contiene el código de la página (o futura página) lapreguntadehoy.es
 
-To install dependencies:
+Es una web simple que muestra una pregunta diaria y se reinicia a las 5am para mostrar una nueva.
 
-```bash
-bun install
-```
-
-To run:
-
-```bash
-bun run index.ts
-```
-
-This project was created using `bun init` in bun v1.0.3. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+El objetivo de este proyecto es puramente lectivo y/o entretenimiento.

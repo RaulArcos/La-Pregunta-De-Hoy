@@ -21,3 +21,17 @@
     text-align: center;
     padding: 10px;
 }
+
+ /* Responsive styles for smaller screens */
+ @media (max-width: 768px) {
+    .centered-text {
+        font-size: 36px; /* Adjust font size for smaller screens */
+        text-align: center;
+    }
+    .columns {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

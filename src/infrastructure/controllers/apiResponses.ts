@@ -1,1 +1,0 @@
-export const QuestionRetrievedOk = {code: 'QE20000', statusCode: '200', message: 'Question Retrieved OK!'}

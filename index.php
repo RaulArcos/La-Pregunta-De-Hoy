@@ -10,7 +10,10 @@
 <body>
     <div class="columns is-centered is-vcentered ml-3 mr-3" style="height: 100vh;">
         <div class="column has-text-centered">
-            <p id="text" class="centered-text">Cuando todo está dicho y hecho, ¿sueles haber dicho más de lo que has hecho?</p>
+            <?php
+                include("php/database.php");
+            ?>
+            <p id="text" class="centered-text"><?php echo $question; ?></p>
             
             <div class="bottom-fixed">
                 <div class="countdown-timer">
